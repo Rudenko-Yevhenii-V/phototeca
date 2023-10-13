@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  dbtest:
+    image: postgres:13
+    container_name: dbtest
+    environment:
+      POSTGRES_PASSWORD: 3353535654
+      POSTGRES_USER: dbtest
+      POSTGRES_DB: dbtest
+    volumes:
+      - ./path_to_local_machine:/var/lib/postgresql/data2
+    ports:
+      - "5458:5432"

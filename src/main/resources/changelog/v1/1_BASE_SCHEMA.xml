@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-0001" author="Yevhenii Rudenko">
+
+        <!-- ======================= chanel_data ======================= -->
+        <createTable tableName="chanel_data">
+            <column name="id" type="UUID" valueComputed="UUID()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="chanel_id" type="bigint">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="enabled" type="boolean"/>
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- ======================= rate_data ======================= -->
+        <createTable tableName="rate_data">
+            <column name="id" type="UUID" valueComputed="UUID()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="json_rate_data" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

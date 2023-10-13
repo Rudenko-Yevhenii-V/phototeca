@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5458/dbtest?stringtype=unspecified
+    username: dbtest
+    password: 3353535654
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: ${jpa.show-sql:true}
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:/changelog/migrations.xml
+    enabled: true
+
+telegram:
+  bot:
+    token: ${TOKEN}
+    bot-name: ${BOT_NAME}
+    max-numbers: 1
+    execute-time-sec: 60
+
+crypto:
+  base-url : https://api.mexc.com/api/v3/ticker/price
+  rate: 10
